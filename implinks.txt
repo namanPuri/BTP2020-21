@@ -1,0 +1,6 @@
+Setup headless raspi using VNC --
+https://www.youtube.com/watch?v=4pJMfvaNgaw&feature=youtu.be
+
+Install openCV on raspi --
+https://www.pyimagesearch.com/2017/09/04/raspbian-stretch-install-opencv-3-python-on-your-raspberry-pi/
+https://www.pyimagesearch.com/2018/09/26/install-opencv-4-on-your-raspberry-pi/ -- BETTER ONE
