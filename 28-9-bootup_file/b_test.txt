@@ -1,0 +1,18 @@
+#boot up file
+
+sudo nano /etc/rc.local
+python /home/pi/blink.py &
+
+# debugging
+sudo bash -c 'python /home/pi/blink.py > /home/pi/blink.log 2>&1' &
+cat blink.log
+
+#stop program
+sudo ps -ax | grep python
+sudo kill <PID>
+
+#stop program from running on boot
+sudo nano /etc/rc.local
+#comment lines
+
+
