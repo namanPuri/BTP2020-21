@@ -2722,6 +2722,33 @@ Get the latest version from &lt;a href="https://github.com/IndianTinker/CEDT-Eag
 <hole x="0" y="-5" drill="1.2"/>
 <hole x="5" y="0" drill="1.2"/>
 </package>
+<package name="LED3MM">
+<description>&lt;B&gt;LED&lt;/B&gt;&lt;p&gt;
+3 mm, round</description>
+<wire x1="1.5748" y1="-1.27" x2="1.5748" y2="1.27" width="0.254" layer="51"/>
+<wire x1="-1.524" y1="0" x2="-1.1708" y2="0.9756" width="0.1524" layer="51" curve="-39.80361"/>
+<wire x1="-1.524" y1="0" x2="-1.1391" y2="-1.0125" width="0.1524" layer="51" curve="41.633208"/>
+<wire x1="1.1571" y1="0.9918" x2="1.524" y2="0" width="0.1524" layer="51" curve="-40.601165"/>
+<wire x1="1.1708" y1="-0.9756" x2="1.524" y2="0" width="0.1524" layer="51" curve="39.80361"/>
+<wire x1="0" y1="1.524" x2="1.2401" y2="0.8858" width="0.1524" layer="21" curve="-54.461337"/>
+<wire x1="-1.2192" y1="0.9144" x2="0" y2="1.524" width="0.1524" layer="21" curve="-53.130102"/>
+<wire x1="0" y1="-1.524" x2="1.203" y2="-0.9356" width="0.1524" layer="21" curve="52.126876"/>
+<wire x1="-1.203" y1="-0.9356" x2="0" y2="-1.524" width="0.1524" layer="21" curve="52.126876"/>
+<wire x1="-0.635" y1="0" x2="0" y2="0.635" width="0.1524" layer="51" curve="-90"/>
+<wire x1="-1.016" y1="0" x2="0" y2="1.016" width="0.1524" layer="51" curve="-90"/>
+<wire x1="0" y1="-0.635" x2="0.635" y2="0" width="0.1524" layer="51" curve="90"/>
+<wire x1="0" y1="-1.016" x2="1.016" y2="0" width="0.1524" layer="51" curve="90"/>
+<wire x1="0" y1="2.032" x2="1.561" y2="1.3009" width="0.254" layer="21" curve="-50.193108"/>
+<wire x1="-1.7929" y1="0.9562" x2="0" y2="2.032" width="0.254" layer="21" curve="-61.926949"/>
+<wire x1="0" y1="-2.032" x2="1.5512" y2="-1.3126" width="0.254" layer="21" curve="49.763022"/>
+<wire x1="-1.7643" y1="-1.0082" x2="0" y2="-2.032" width="0.254" layer="21" curve="60.255215"/>
+<wire x1="-2.032" y1="0" x2="-1.7891" y2="0.9634" width="0.254" layer="51" curve="-28.301701"/>
+<wire x1="-2.032" y1="0" x2="-1.7306" y2="-1.065" width="0.254" layer="51" curve="31.60822"/>
+<pad name="A" x="-1.27" y="0" drill="0.8128" shape="octagon"/>
+<pad name="K" x="1.27" y="0" drill="0.8128" shape="octagon"/>
+<text x="1.905" y="0.381" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="1.905" y="-1.651" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+</package>
 </packages>
 </library>
 <library name="CEDT_SEPTEMBER_V2">
@@ -4457,6 +4484,17 @@ design rules under a new name.</description>
 <attribute name="POPULARITY" value="16" x="80.01" y="69.85" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VALUE" x="58.4454" y="44.704" size="1.27" layer="27" ratio="10" rot="R90"/>
 </element>
+<element name="LED1" library="CEDT_JANUARY_2015_v5" package="LED3MM" value="LED3MM" x="0" y="-48.26" smashed="yes">
+<attribute name="NAME" x="1.905" y="-47.879" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="1.905" y="-49.911" size="1.27" layer="27" ratio="10"/>
+</element>
+<element name="R3" library="CEDT" package="0207/7" value="10k" x="2.54" y="-54.61" smashed="yes">
+<attribute name="MF" value="" x="2.54" y="-54.61" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="" x="2.54" y="-54.61" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="0" y="-53.213" size="1.27" layer="25" ratio="10"/>
+<attribute name="OC_FARNELL" value="unknown" x="2.54" y="-54.61" size="1.778" layer="27" display="off"/>
+<attribute name="VALUE" x="0.254" y="-55.1688" size="1.27" layer="27" ratio="10"/>
+</element>
 </elements>
 <signals>
 <signal name="GND">
@@ -4500,6 +4538,7 @@ design rules under a new name.</description>
 <wire x1="48.315" y1="48.26" x2="48.275" y2="48.3" width="0.6096" layer="16"/>
 <contactref element="SL2" pad="4"/>
 <wire x1="50.165" y1="53.34" x2="54.61" y2="53.34" width="0.6096" layer="16"/>
+<contactref element="LED1" pad="K"/>
 <wire x1="26.67" y1="50.8" x2="29.21" y2="58.42" width="0" layer="19" extent="1-1"/>
 <wire x1="26.67" y1="45.72" x2="26.67" y2="50.8" width="0" layer="19" extent="1-1"/>
 <wire x1="29.21" y1="40.64" x2="26.67" y2="45.72" width="0" layer="19" extent="1-1"/>
@@ -4519,6 +4558,7 @@ design rules under a new name.</description>
 <wire x1="3.81" y1="7.62" x2="8.875" y2="17.78" width="0" layer="19" extent="16-16"/>
 <wire x1="8.89" y1="41.91" x2="13.335" y2="52.6034" width="0" layer="19" extent="16-16"/>
 <wire x1="12.7" y1="-15.24" x2="3.81" y2="7.62" width="0" layer="19" extent="1-1"/>
+<wire x1="1.27" y1="-48.26" x2="12.7" y2="-15.24" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="+3V3">
 <contactref element="K1" pad="1"/>
@@ -4562,6 +4602,7 @@ design rules under a new name.</description>
 <wire x1="43.815" y1="56.1975" x2="44.45" y2="56.8325" width="0.6096" layer="16"/>
 <wire x1="43.815" y1="55.245" x2="43.815" y2="56.1975" width="0.6096" layer="16"/>
 <contactref element="SL2" pad="5"/>
+<contactref element="R3" pad="1"/>
 <wire x1="51.435" y1="55.88" x2="54.61" y2="55.88" width="0" layer="19" extent="16-16"/>
 <wire x1="36.195" y1="55.56" x2="38.42" y2="55.56" width="0" layer="19" extent="16-16"/>
 <wire x1="18.415" y1="46.4566" x2="32.0675" y2="46.6725" width="0" layer="19" extent="16-16"/>
@@ -4576,6 +4617,7 @@ design rules under a new name.</description>
 <wire x1="3.825" y1="17.78" x2="11.56" y2="25.4" width="0" layer="19" extent="16-16"/>
 <wire x1="26.67" y1="12.7" x2="18.92" y2="25.4" width="0" layer="19" extent="16-16"/>
 <wire x1="26.67" y1="10.16" x2="26.67" y2="12.7" width="0" layer="19" extent="1-1"/>
+<wire x1="-1.27" y1="-54.61" x2="26.67" y2="10.16" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$4">
 <contactref element="IC5" pad="16"/>
@@ -4654,6 +4696,11 @@ design rules under a new name.</description>
 <wire x1="50.84" y1="51.395" x2="51.435" y2="50.8" width="0.6096" layer="16"/>
 <contactref element="SL2" pad="3"/>
 <wire x1="54.61" y1="50.8" x2="51.435" y2="50.8" width="0.6096" layer="16"/>
+</signal>
+<signal name="N$1">
+<contactref element="R3" pad="2"/>
+<contactref element="LED1" pad="A"/>
+<wire x1="-1.27" y1="-48.26" x2="6.35" y2="-54.61" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
