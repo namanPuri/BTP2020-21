@@ -5988,11 +5988,6 @@ design rules under a new name.</description>
 <attribute name="OC_FARNELL" value="unknown" x="53.34" y="63.5" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="55.626" y="64.0588" size="1.27" layer="27" ratio="10" rot="R180"/>
 </element>
-<element name="THERMISTOR1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="MOLEX-1X2" package3d_urn="urn:adsk.eagle:package:38040/1" value="" x="68.58" y="21.59" smashed="yes" rot="R270">
-<attribute name="NAME" x="71.882" y="22.86" size="0.6096" layer="25" font="vector" ratio="20" rot="R270"/>
-<attribute name="SF_ID" value="PRT-09918" x="77.47" y="27.94" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="VALUE" x="65.786" y="22.86" size="0.6096" layer="27" font="vector" ratio="20" rot="R270" align="top-left"/>
-</element>
 <element name="POWER" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="MOLEX-1X3" package3d_urn="urn:adsk.eagle:package:38064/1" value="" x="68.58" y="30.48" smashed="yes" rot="R270">
 <attribute name="NAME" x="70.739" y="29.337" size="0.6096" layer="25" font="vector" ratio="20" rot="R270"/>
 <attribute name="PROD_ID" value="CONN-08625" x="68.58" y="30.48" size="1.778" layer="27" rot="R270" display="off"/>
@@ -6108,9 +6103,9 @@ design rules under a new name.</description>
 <attribute name="NAME" x="102.035" y="47.86" size="1.016" layer="25" ratio="10" rot="R270"/>
 <attribute name="VALUE" x="101.1825" y="41.8275" size="0.8128" layer="27" ratio="10" rot="R180"/>
 </element>
-<element name="X2" library="Rembrandt Electronics - JST XH Connectors v1-0" package="JST-XH-02-PACKAGE-LONG-PAD" value="JST-XH-02-PIN-LONG-PAD" x="91.44" y="54.61" smashed="yes" rot="R270">
-<attribute name="NAME" x="89.4" y="58.865" size="1.016" layer="25" ratio="10"/>
-<attribute name="VALUE" x="95.3325" y="57.9125" size="1.016" layer="27" ratio="10" rot="R270"/>
+<element name="X2" library="Rembrandt Electronics - JST XH Connectors v1-0" package="JST-XH-02-PACKAGE-LONG-PAD" value="JST-XH-02-PIN-LONG-PAD" x="68.58" y="19.685" smashed="yes" rot="R270">
+<attribute name="NAME" x="66.54" y="23.94" size="1.016" layer="25" ratio="10"/>
+<attribute name="VALUE" x="72.4725" y="22.9875" size="1.016" layer="27" ratio="10" rot="R270"/>
 </element>
 <element name="X3" library="Rembrandt Electronics - JST XH Connectors v1-0" package="JST-XH-02-PACKAGE-LONG-PAD" value="JST-XH-02-PIN-LONG-PAD" x="3.81" y="-6.35" smashed="yes">
 <attribute name="NAME" x="-0.445" y="-8.39" size="1.016" layer="25" ratio="10" rot="R90"/>
@@ -6467,7 +6462,6 @@ design rules under a new name.</description>
 <contactref element="R2" pad="1"/>
 <contactref element="OLED_MODULE" pad="4"/>
 <contactref element="K1" pad="3"/>
-<contactref element="THERMISTOR1" pad="2"/>
 <wire x1="59.69" y1="55.88" x2="57.15" y2="58.42" width="0.6096" layer="16"/>
 <wire x1="57.15" y1="59.69" x2="57.15" y2="58.42" width="0.6096" layer="16"/>
 <wire x1="59.69" y1="55.88" x2="59.69" y2="53.34" width="0.6096" layer="16"/>
@@ -6483,15 +6477,15 @@ design rules under a new name.</description>
 <wire x1="57.15" y1="44.45" x2="55.88" y2="45.72" width="0.6096" layer="16"/>
 <wire x1="55.88" y1="45.72" x2="55.88" y2="52.07" width="0.6096" layer="16"/>
 <wire x1="60.96" y1="19.05" x2="60.96" y2="8.89" width="0.6096" layer="16"/>
-<wire x1="68.58" y1="19.05" x2="60.96" y2="19.05" width="0.6096" layer="16"/>
 <contactref element="X2" pad="2"/>
-<wire x1="59.69" y1="53.34" x2="91.44" y2="53.34" width="0" layer="19" extent="16-16"/>
+<wire x1="60.96" y1="19.05" x2="65.405" y2="19.05" width="0.6096" layer="16"/>
+<wire x1="65.405" y1="19.05" x2="66.04" y2="18.415" width="0.6096" layer="16"/>
+<wire x1="66.04" y1="18.415" x2="68.58" y2="18.415" width="0.6096" layer="16"/>
 </signal>
 <signal name="SCL">
 <contactref element="R1" pad="1"/>
 <contactref element="OLED_MODULE" pad="3"/>
 <contactref element="K1" pad="5"/>
-<contactref element="THERMISTOR1" pad="1"/>
 <wire x1="57.15" y1="55.88" x2="54.61" y2="55.88" width="0.6096" layer="16"/>
 <wire x1="54.61" y1="55.88" x2="53.34" y2="54.61" width="0.6096" layer="16"/>
 <wire x1="53.34" y1="54.61" x2="53.34" y2="52.07" width="0.6096" layer="16"/>
@@ -6512,10 +6506,9 @@ design rules under a new name.</description>
 <wire x1="59.055" y1="10.922" x2="58.42" y2="10.287" width="0.6096" layer="16"/>
 <wire x1="59.055" y1="24.13" x2="59.055" y2="10.922" width="0.6096" layer="16"/>
 <wire x1="59.055" y1="24.13" x2="63.5" y2="24.13" width="0.6096" layer="16"/>
-<wire x1="66.04" y1="21.59" x2="68.58" y2="21.59" width="0.6096" layer="16"/>
-<wire x1="63.5" y1="24.13" x2="66.04" y2="21.59" width="0.6096" layer="16"/>
 <contactref element="X2" pad="1"/>
-<wire x1="57.15" y1="55.88" x2="91.44" y2="55.88" width="0" layer="19" extent="1-1"/>
+<wire x1="66.675" y1="20.955" x2="68.58" y2="20.955" width="0.6096" layer="16"/>
+<wire x1="63.5" y1="24.13" x2="66.675" y2="20.955" width="0.6096" layer="16"/>
 </signal>
 <signal name="DT">
 <contactref element="R11" pad="1"/>

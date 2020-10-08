@@ -6047,11 +6047,6 @@ design rules under a new name.</description>
 <attribute name="SF_ID" value="PRT-08231" x="68.58" y="67.31" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="65.151" y="65.024" size="0.6096" layer="27" font="vector" ratio="20" rot="R270"/>
 </element>
-<element name="THERMISTOR4" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="MOLEX-1X2" package3d_urn="urn:adsk.eagle:package:38040/1" value="" x="68.58" y="14.605" smashed="yes" rot="R270">
-<attribute name="NAME" x="71.882" y="15.875" size="0.6096" layer="25" font="vector" ratio="20" rot="R270"/>
-<attribute name="SF_ID" value="PRT-09918" x="68.58" y="14.605" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="VALUE" x="65.786" y="15.875" size="0.6096" layer="27" font="vector" ratio="20" rot="R270" align="top-left"/>
-</element>
 <element name="J2" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="MOLEX-1X4" package3d_urn="urn:adsk.eagle:package:38087/1" value="" x="68.58" y="43.18" smashed="yes" rot="R270">
 <attribute name="NAME" x="71.882" y="40.894" size="0.6096" layer="25" font="vector" ratio="20" rot="R270"/>
 <attribute name="PROD_ID" value="CONN-08186" x="68.58" y="43.18" size="1.778" layer="27" rot="R270" display="off"/>
@@ -6107,9 +6102,9 @@ design rules under a new name.</description>
 <attribute name="NAME" x="66.54" y="23.94" size="1.016" layer="25" ratio="10"/>
 <attribute name="VALUE" x="72.4725" y="22.9875" size="1.016" layer="27" ratio="10" rot="R270"/>
 </element>
-<element name="X3" library="Rembrandt Electronics - JST XH Connectors v1-0" package="JST-XH-02-PACKAGE-LONG-PAD" value="JST-XH-02-PIN-LONG-PAD" x="3.81" y="-6.35" smashed="yes">
-<attribute name="NAME" x="-0.445" y="-8.39" size="1.016" layer="25" ratio="10" rot="R90"/>
-<attribute name="VALUE" x="0.5075" y="-2.4575" size="1.016" layer="27" ratio="10"/>
+<element name="X3" library="Rembrandt Electronics - JST XH Connectors v1-0" package="JST-XH-02-PACKAGE-LONG-PAD" value="JST-XH-02-PIN-LONG-PAD" x="68.58" y="11.43" smashed="yes" rot="R270">
+<attribute name="NAME" x="66.54" y="15.685" size="1.016" layer="25" ratio="10"/>
+<attribute name="VALUE" x="72.4725" y="14.7325" size="1.016" layer="27" ratio="10" rot="R270"/>
 </element>
 <element name="X4" library="Rembrandt Electronics - JST XH Connectors v1-0" package="JST-XH-02-PACKAGE-LONG-PAD" value="JST-XH-02-PIN-LONG-PAD" x="3.81" y="-15.24" smashed="yes">
 <attribute name="NAME" x="-0.445" y="-17.28" size="1.016" layer="25" ratio="10" rot="R90"/>
@@ -6676,27 +6671,27 @@ design rules under a new name.</description>
 </signal>
 <signal name="TX">
 <contactref element="K1" pad="8"/>
-<contactref element="THERMISTOR4" pad="1"/>
 <wire x1="27.94" y1="15.875" x2="23.495" y2="15.875" width="0.6096" layer="16"/>
 <wire x1="23.495" y1="15.875" x2="23.495" y2="4.445" width="0.6096" layer="16"/>
 <wire x1="23.495" y1="4.445" x2="24.765" y2="3.175" width="0.6096" layer="16"/>
 <wire x1="64.135" y1="3.175" x2="64.77" y2="3.81" width="0.6096" layer="16"/>
-<wire x1="64.77" y1="3.81" x2="64.77" y2="13.97" width="0.6096" layer="16"/>
-<wire x1="65.405" y1="14.605" x2="68.58" y2="14.605" width="0.6096" layer="16"/>
+<wire x1="64.77" y1="3.81" x2="64.77" y2="11.43" width="0.6096" layer="16"/>
 <wire x1="24.765" y1="3.175" x2="64.135" y2="3.175" width="0.6096" layer="16"/>
-<wire x1="64.77" y1="13.97" x2="65.405" y2="14.605" width="0.6096" layer="16"/>
+<contactref element="X3" pad="1"/>
+<wire x1="68.58" y1="12.7" x2="66.04" y2="12.7" width="0.6096" layer="16"/>
+<wire x1="66.04" y1="12.7" x2="64.77" y2="11.43" width="0.6096" layer="16"/>
 </signal>
 <signal name="RX">
 <contactref element="K1" pad="10"/>
-<contactref element="THERMISTOR4" pad="2"/>
 <wire x1="27.94" y1="18.415" x2="22.86" y2="18.415" width="0.6096" layer="16"/>
 <wire x1="22.86" y1="18.415" x2="22.225" y2="17.78" width="0.6096" layer="16"/>
 <wire x1="22.225" y1="17.78" x2="22.225" y2="2.54" width="0.6096" layer="16"/>
 <wire x1="22.225" y1="2.54" x2="23.4442" y2="1.3208" width="0.6096" layer="16"/>
 <wire x1="23.4442" y1="1.3208" x2="66.0908" y2="1.3208" width="0.6096" layer="16"/>
 <wire x1="66.0908" y1="1.3208" x2="67.31" y2="2.54" width="0.6096" layer="16"/>
-<wire x1="67.31" y1="10.795" x2="67.31" y2="2.54" width="0.6096" layer="16"/>
-<wire x1="67.31" y1="10.795" x2="68.58" y2="12.065" width="0.6096" layer="16"/>
+<contactref element="X3" pad="2"/>
+<wire x1="67.31" y1="2.54" x2="67.31" y2="8.89" width="0.6096" layer="16"/>
+<wire x1="67.31" y1="8.89" x2="68.58" y2="10.16" width="0.6096" layer="16"/>
 </signal>
 <signal name="AIN0">
 <contactref element="U$3" pad="4"/>
@@ -6773,6 +6768,27 @@ design rules under a new name.</description>
 <contactref element="SL1" pad="5"/>
 <contactref element="K1" pad="33"/>
 <wire x1="30.48" y1="48.895" x2="34.925" y2="48.895" width="0.6096" layer="16"/>
+</signal>
+<signal name="N$10">
+<contactref element="X4" pad="1"/>
+</signal>
+<signal name="N$11">
+<contactref element="X4" pad="2"/>
+</signal>
+<signal name="N$16">
+<contactref element="X1" pad="1"/>
+</signal>
+<signal name="N$17">
+<contactref element="X1" pad="2"/>
+</signal>
+<signal name="N$18">
+<contactref element="X1" pad="3"/>
+</signal>
+<signal name="N$19">
+<contactref element="X1" pad="4"/>
+</signal>
+<signal name="N$20">
+<contactref element="X1" pad="5"/>
 </signal>
 </signals>
 <mfgpreviewcolors>

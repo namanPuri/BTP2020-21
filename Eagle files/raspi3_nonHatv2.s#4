@@ -18800,7 +18800,6 @@ Number of pins: &lt;b&gt;2&lt;/b&gt;&lt;b&gt;&lt;P&gt;
 <part name="+3V6" library="supply1" deviceset="+3V3" device=""/>
 <part name="+3V7" library="supply1" deviceset="+3V3" device=""/>
 <part name="J1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_04" device="POLAR" package3d_urn="urn:adsk.eagle:package:38087/1"/>
-<part name="THERMISTOR4" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_02" device="POLAR" package3d_urn="urn:adsk.eagle:package:38040/1"/>
 <part name="J2" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_04" device="POLAR" package3d_urn="urn:adsk.eagle:package:38087/1"/>
 <part name="J4" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_04" device="POLAR" package3d_urn="urn:adsk.eagle:package:38087/1"/>
 <part name="U$3" library="CEDT_JANUARY_2015_v5" deviceset="BOB_10PIN" device=""/>
@@ -19029,9 +19028,6 @@ Number of pins: &lt;b&gt;2&lt;/b&gt;&lt;b&gt;&lt;P&gt;
 <attribute name="VALUE" x="-63.5" y="-8.636" size="1.778" layer="96" font="vector"/>
 <attribute name="NAME" x="-63.5" y="6.858" size="1.778" layer="95" font="vector"/>
 </instance>
-<instance part="THERMISTOR4" gate="G$1" x="-38.1" y="0" smashed="yes" rot="MR180">
-<attribute name="VALUE" x="-40.64" y="4.826" size="1.778" layer="96" font="vector" rot="MR180"/>
-</instance>
 <instance part="J2" gate="G$1" x="-13.97" y="-2.54" smashed="yes">
 <attribute name="VALUE" x="-19.05" y="-9.906" size="1.778" layer="96" font="vector"/>
 <attribute name="NAME" x="-19.05" y="5.588" size="1.778" layer="95" font="vector"/>
@@ -19109,12 +19105,12 @@ Number of pins: &lt;b&gt;2&lt;/b&gt;&lt;b&gt;&lt;P&gt;
 <instance part="X1" gate="-5" x="64.77" y="-6.35" smashed="yes">
 <attribute name="NAME" x="67.31" y="-7.112" size="1.524" layer="95"/>
 </instance>
-<instance part="X2" gate="-2" x="83.82" y="10.16" smashed="yes">
-<attribute name="NAME" x="86.36" y="9.398" size="1.524" layer="95"/>
+<instance part="X2" gate="-2" x="-52.07" y="17.78" smashed="yes">
+<attribute name="NAME" x="-49.53" y="17.018" size="1.524" layer="95"/>
 </instance>
-<instance part="X2" gate="-1" x="83.82" y="12.7" smashed="yes">
-<attribute name="NAME" x="86.36" y="11.938" size="1.524" layer="95"/>
-<attribute name="VALUE" x="83.058" y="14.097" size="1.778" layer="96"/>
+<instance part="X2" gate="-1" x="-52.07" y="20.32" smashed="yes">
+<attribute name="NAME" x="-49.53" y="19.558" size="1.524" layer="95"/>
+<attribute name="VALUE" x="-75.692" y="24.257" size="1.778" layer="96"/>
 </instance>
 <instance part="X3" gate="-2" x="85.09" y="-5.08" smashed="yes">
 <attribute name="NAME" x="87.63" y="-5.842" size="1.524" layer="95"/>
@@ -19521,8 +19517,8 @@ Number of pins: &lt;b&gt;2&lt;/b&gt;&lt;b&gt;&lt;P&gt;
 </segment>
 <segment>
 <pinref part="X2" gate="-2" pin="S"/>
-<wire x1="81.28" y1="10.16" x2="80.01" y2="10.16" width="0.1524" layer="91"/>
-<label x="78.74" y="10.16" size="1.27" layer="95" font="vector" ratio="16" rot="R180" xref="yes"/>
+<wire x1="-54.61" y1="17.78" x2="-55.88" y2="17.78" width="0.1524" layer="91"/>
+<label x="-57.15" y="17.78" size="1.27" layer="95" font="vector" ratio="16" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="SCL" class="0">
@@ -19545,8 +19541,8 @@ Number of pins: &lt;b&gt;2&lt;/b&gt;&lt;b&gt;&lt;P&gt;
 </segment>
 <segment>
 <pinref part="X2" gate="-1" pin="S"/>
-<wire x1="81.28" y1="12.7" x2="80.01" y2="12.7" width="0.1524" layer="91"/>
-<label x="78.74" y="12.7" size="1.27" layer="95" font="vector" ratio="16" rot="R180" xref="yes"/>
+<wire x1="-54.61" y1="20.32" x2="-55.88" y2="20.32" width="0.1524" layer="91"/>
+<label x="-57.15" y="20.32" size="1.27" layer="95" font="vector" ratio="16" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="DT" class="0">
@@ -19801,9 +19797,9 @@ Number of pins: &lt;b&gt;2&lt;/b&gt;&lt;b&gt;&lt;P&gt;
 <label x="58.42" y="63.5" size="1.27" layer="95" font="vector" ratio="17" xref="yes"/>
 </segment>
 <segment>
-<pinref part="THERMISTOR4" gate="G$1" pin="1"/>
-<wire x1="-30.48" y1="0" x2="-29.21" y2="0" width="0.1524" layer="91"/>
-<label x="-27.94" y="0" size="1.27" layer="95" font="vector" ratio="17" xref="yes"/>
+<pinref part="X3" gate="-1" pin="S"/>
+<wire x1="82.55" y1="-2.54" x2="81.28" y2="-2.54" width="0.1524" layer="91"/>
+<label x="80.01" y="-2.54" size="1.27" layer="95" font="vector" ratio="16" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="RX" class="0">
@@ -19815,9 +19811,9 @@ Number of pins: &lt;b&gt;2&lt;/b&gt;&lt;b&gt;&lt;P&gt;
 <label x="58.42" y="60.96" size="1.27" layer="95" font="vector" ratio="17" xref="yes"/>
 </segment>
 <segment>
-<pinref part="THERMISTOR4" gate="G$1" pin="2"/>
-<wire x1="-30.48" y1="-2.54" x2="-29.21" y2="-2.54" width="0.1524" layer="91"/>
-<label x="-27.94" y="-2.54" size="1.27" layer="95" font="vector" ratio="17" xref="yes"/>
+<pinref part="X3" gate="-2" pin="S"/>
+<wire x1="82.55" y1="-5.08" x2="81.28" y2="-5.08" width="0.1524" layer="91"/>
+<label x="80.01" y="-5.08" size="1.27" layer="95" font="vector" ratio="16" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="AIN0" class="0">
@@ -19951,6 +19947,50 @@ Number of pins: &lt;b&gt;2&lt;/b&gt;&lt;b&gt;&lt;P&gt;
 <wire x1="33.02" y1="30.48" x2="31.75" y2="30.48" width="0.1524" layer="91" style="dashdot"/>
 <pinref part="K1" gate="G$1" pin="33"/>
 <label x="30.48" y="30.48" size="1.27" layer="95" font="vector" ratio="16" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="N$10" class="0">
+<segment>
+<pinref part="X4" gate="-1" pin="S"/>
+<wire x1="82.55" y1="-12.7" x2="81.28" y2="-12.7" width="0.1524" layer="91"/>
+<label x="80.01" y="-12.7" size="1.27" layer="95" font="vector" ratio="16" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="N$11" class="0">
+<segment>
+<pinref part="X4" gate="-2" pin="S"/>
+<wire x1="82.55" y1="-15.24" x2="81.28" y2="-15.24" width="0.1524" layer="91"/>
+<label x="80.01" y="-15.24" size="1.27" layer="95" font="vector" ratio="16" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="N$16" class="0">
+<segment>
+<pinref part="X1" gate="-1" pin="S"/>
+<wire x1="62.23" y1="3.81" x2="60.96" y2="3.81" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$17" class="0">
+<segment>
+<pinref part="X1" gate="-2" pin="S"/>
+<wire x1="62.23" y1="1.27" x2="60.96" y2="1.27" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$18" class="0">
+<segment>
+<pinref part="X1" gate="-3" pin="S"/>
+<wire x1="62.23" y1="-1.27" x2="60.96" y2="-1.27" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$19" class="0">
+<segment>
+<pinref part="X1" gate="-4" pin="S"/>
+<wire x1="62.23" y1="-3.81" x2="60.96" y2="-3.81" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$20" class="0">
+<segment>
+<pinref part="X1" gate="-5" pin="S"/>
+<wire x1="62.23" y1="-6.35" x2="60.96" y2="-6.35" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
