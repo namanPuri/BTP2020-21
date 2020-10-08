@@ -18821,9 +18821,6 @@ Number of pins: &lt;b&gt;2&lt;/b&gt;&lt;b&gt;&lt;P&gt;
 <part name="X4" library="Rembrandt Electronics - JST XH Connectors v1-0" deviceset="JST-XH-02-PIN" device="-LONG-PAD"/>
 <part name="+3V12" library="supply1" deviceset="+3V3" device=""/>
 <part name="GND12" library="MSP PROJECT LIBRARY" deviceset="GND" device=""/>
-<part name="X5" library="Rembrandt Electronics - JST XH Connectors v1-0" deviceset="JST-XH-02-PIN" device="-LONG-PAD"/>
-<part name="GND7" library="MSP PROJECT LIBRARY" deviceset="GND" device=""/>
-<part name="P+2" library="supply1" deviceset="+5V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -19125,19 +19122,6 @@ Number of pins: &lt;b&gt;2&lt;/b&gt;&lt;b&gt;&lt;P&gt;
 <instance part="GND12" gate="1" x="81.28" y="-19.05" smashed="yes">
 <attribute name="VALUE" x="78.74" y="-21.59" size="1.778" layer="96"/>
 </instance>
-<instance part="X5" gate="-2" x="-21.59" y="-15.24" smashed="yes">
-<attribute name="NAME" x="-19.05" y="-16.002" size="1.524" layer="95"/>
-</instance>
-<instance part="X5" gate="-1" x="-21.59" y="-12.7" smashed="yes">
-<attribute name="NAME" x="-19.05" y="-13.462" size="1.524" layer="95"/>
-<attribute name="VALUE" x="-22.352" y="-11.303" size="1.778" layer="96"/>
-</instance>
-<instance part="GND7" gate="1" x="-25.4" y="-19.05" smashed="yes">
-<attribute name="VALUE" x="-27.94" y="-21.59" size="1.778" layer="96"/>
-</instance>
-<instance part="P+2" gate="1" x="-25.4" y="-8.89" smashed="yes">
-<attribute name="VALUE" x="-22.86" y="-6.35" size="1.778" layer="96" rot="R180"/>
-</instance>
 </instances>
 <busses>
 </busses>
@@ -19318,12 +19302,6 @@ Number of pins: &lt;b&gt;2&lt;/b&gt;&lt;b&gt;&lt;P&gt;
 <pinref part="GND12" gate="1" pin="GND"/>
 <wire x1="81.28" y1="-16.51" x2="81.28" y2="-15.24" width="0.1524" layer="91"/>
 </segment>
-<segment>
-<pinref part="X5" gate="-2" pin="S"/>
-<wire x1="-24.13" y1="-15.24" x2="-25.4" y2="-15.24" width="0.1524" layer="91"/>
-<pinref part="GND7" gate="1" pin="GND"/>
-<wire x1="-25.4" y1="-16.51" x2="-25.4" y2="-15.24" width="0.1524" layer="91"/>
-</segment>
 </net>
 <net name="+3V3" class="0">
 <segment>
@@ -19478,12 +19456,6 @@ Number of pins: &lt;b&gt;2&lt;/b&gt;&lt;b&gt;&lt;P&gt;
 <wire x1="10.16" y1="17.78" x2="11.43" y2="17.78" width="0.1524" layer="91"/>
 <wire x1="11.43" y1="17.78" x2="11.43" y2="19.05" width="0.1524" layer="91"/>
 <pinref part="P+8" gate="1" pin="+5V"/>
-</segment>
-<segment>
-<pinref part="X5" gate="-1" pin="S"/>
-<wire x1="-24.13" y1="-12.7" x2="-25.4" y2="-12.7" width="0.1524" layer="91"/>
-<wire x1="-25.4" y1="-11.43" x2="-25.4" y2="-12.7" width="0.1524" layer="91"/>
-<pinref part="P+2" gate="1" pin="+5V"/>
 </segment>
 </net>
 <net name="N$4" class="0">
