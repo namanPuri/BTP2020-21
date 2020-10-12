@@ -63,9 +63,12 @@ arr=["RED",
 "BLACK",
 ]
 i=0
+language = 'en'
+
 while(i<58):
-    tts = gTTS(arr[i])
+    tts = gTTS(text=arr[i], lang=language, slow=True) 
     name=arr[i] + ".mp3"
     tts.save(name)
     i=i+1
-    print(gTTS(arr[i])
+print("over!!")
+    
