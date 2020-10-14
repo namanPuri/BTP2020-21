@@ -63,7 +63,7 @@ arr=["RED",
 "BLACK",
 ]
 i=0
-language = 'en'
+language = 'hi'
 
 while(i<58):
     tts = gTTS(text=arr[i], lang=language, slow=True) 
