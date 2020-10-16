@@ -66,7 +66,7 @@ i=0
 language = 'hi'
 
 while(i<58):
-    tts = gTTS(text=arr[i], lang=language, slow=True) 
+    tts = gTTS(text=arr[i], lang=language, slow=False) 
     name=arr[i] + ".mp3"
     tts.save(name)
     i=i+1
