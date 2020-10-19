@@ -41,13 +41,14 @@ while True:
     b = avg2_int[2]
 
     new = getColorName(r,g,b)
+    print(GPIO.input(btn_pin))
 
     if (GPIO.input(btn_pin) == True):
         time.sleep(0.01)
         if (GPIO.input(btn_pin) == True):
             mixer.music.load('ColorFiles(en)/' + new +'.mp3')
             mixer.music.play()
-            print(GPIO.input(btn_pin))
+            #print(GPIO.input(btn_pin))
             time.sleep(0.5)
     frame = cv2.flip(frame,1)
     
