@@ -10,7 +10,7 @@ btn_pin = 15
 prev = new = ''
 cap = cv2.VideoCapture(0)
 
-GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BOARD)
 GPIO.setup(btn_pin, GPIO.IN)
 
 mixer.init()
