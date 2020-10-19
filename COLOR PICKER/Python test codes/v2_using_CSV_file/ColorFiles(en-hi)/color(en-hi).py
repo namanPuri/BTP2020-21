@@ -1,5 +1,6 @@
 import os
 from gtts import gTTS
+import time
 
 
 
@@ -70,5 +71,6 @@ while(i<58):
     name=arr[i] + ".mp3"
     tts.save(name)
     i=i+1
+    time.sleep(0.1)
 print("over!!")
     
