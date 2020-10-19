@@ -43,10 +43,12 @@ while True:
     new = getColorName(r,g,b)
 
     if (new != prev):
-        if (GPIO.input(btn_pin) == True):
-            mixer.music.load('ColorFiles(en)/' + new +'.mp3')
-            mixer.music.play()
-            time.sleep(0.1)
+        if (GPIO.input(btn_pin) == False):
+            time.sleep(0.01)
+            if (GPIO.input(btn_pin) == False):
+                mixer.music.load('ColorFiles(en)/' + new +'.mp3')
+                mixer.music.play()
+                time.sleep(0.5)
         prev = new
     frame = cv2.flip(frame,1)
     
