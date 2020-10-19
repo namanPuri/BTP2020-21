@@ -20,8 +20,8 @@ while True:
     csv = pd.read_csv('colorsV3.csv', names=index, header=None,encoding='latin-1')
     ret, frame = cap.read()
 
-    cv2.rectangle(frame, (309,229), (329,249), (0,255,0), 1)       #pixel range = x ==> 0-639 and y == 0 - 479
-    roi = frame[230:249, 310:329]
+    cv2.rectangle(frame, (299,219), (339,259), (0,255,0), 1)       #pixel range = x ==> 0-639 and y == 0 - 479
+    roi = frame[220:259, 300:339]
     avg1 = np.average(roi, axis=0)
     avg2 = np.average(avg1, axis=0)
     avg2_int = avg2.astype(int)
