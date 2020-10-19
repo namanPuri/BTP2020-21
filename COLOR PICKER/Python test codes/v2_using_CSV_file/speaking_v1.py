@@ -42,9 +42,9 @@ while True:
 
     new = getColorName(r,g,b)
 
-    if (GPIO.input(btn_pin) == False):
+    if (GPIO.input(btn_pin) == True):
         time.sleep(0.01)
-        if (GPIO.input(btn_pin) == False):
+        if (GPIO.input(btn_pin) == True):
             mixer.music.load('ColorFiles(en)/' + new +'.mp3')
             mixer.music.play()
             print(GPIO.input(btn_pin))
