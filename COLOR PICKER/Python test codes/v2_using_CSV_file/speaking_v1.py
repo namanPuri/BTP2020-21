@@ -3,6 +3,7 @@ import cv2
 import numpy as np
 import pandas as pd
 import RPi.GPIO as GPIO
+import time
 from pygame import mixer
 
 btn_pin = 15
