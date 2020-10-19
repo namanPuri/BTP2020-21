@@ -2,7 +2,7 @@ import time
 import RPi.GPIO as GPIO
 
 # Pins definitions
-btn_pin = 15
+btn_pin = 5
 
 # Set up pins
 GPIO.setmode(GPIO.BCM)
