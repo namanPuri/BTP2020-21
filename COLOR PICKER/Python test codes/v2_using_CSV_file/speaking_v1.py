@@ -47,6 +47,7 @@ while True:
         if (GPIO.input(btn_pin) == False):
             mixer.music.load('ColorFiles(en)/' + new +'.mp3')
             mixer.music.play()
+            print(GPIO.input(btn_pin))
             time.sleep(0.5)
     frame = cv2.flip(frame,1)
     
