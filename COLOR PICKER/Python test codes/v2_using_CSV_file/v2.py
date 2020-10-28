@@ -1,5 +1,6 @@
 # draws sq in the centre of video
 import cv2
+import time
 import numpy as np
 import pandas as pd
 
@@ -30,9 +31,11 @@ while True:
     r = avg2_int[0]
     g = avg2_int[1]
     b = avg2_int[2]
-
+    
+    print(r," ",g," ",b) 
+    
     new = getColorName(r,g,b)
-
+    time.sleep(1)
     if (new != prev):
         print(new)    
         prev = new
