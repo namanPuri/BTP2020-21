@@ -113,8 +113,8 @@ while True:
     blue = cv2.bitwise_and(frame, frame, mask=blue_mask)
 
     # Green color
-    low_green = np.array([20, 45, 95])
-    high_green = np.array([27, 173, 195])
+    low_green = np.array([16, 40, 86])
+    high_green = np.array([35, 180, 205])
     green_mask = cv2.inRange(hsv_frame, low_green, high_green)
     green = cv2.bitwise_and(frame, frame, mask=green_mask)
 

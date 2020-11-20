@@ -26,7 +26,7 @@ def getColorName(R,G,B):
     if(mode):
         csv = pd.read_csv('colorsV3.csv', names=index1, header=None,encoding='latin-1')
     else:
-        csv = pd.read_csv('colorsT10.csv', names=index, header=None,encoding='latin-1')
+        csv = pd.read_csv('colorsT2.csv', names=index, header=None,encoding='latin-1')
     minimum = 10000
     for i in range(len(csv)):
         d = abs(R- int(csv.loc[i,"R"])) + abs(G- int(csv.loc[i,"G"]))+ abs(B- int(csv.loc[i,"B"]))
@@ -40,13 +40,13 @@ def getContours(img,imgContour):
     contours, hierarchy = cv2.findContours(img, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
     red_count=0
     blue_count=0
+    ph_count=0
     other=0
-    prev_area=0
     for cnt in contours:
         area = cv2.contourArea(cnt)
-        areaMin = 2000
+        areaMin = 1000
         areaMax = 20000
-        if (area > areaMin and area < areaMax and area > prev_area):
+        if (area > areaMin and area < areaMax):
             cv2.drawContours(imgContour, cnt, -1, (255, 0, 255), 7)
             peri = cv2.arcLength(cnt, True)
             approx = cv2.approxPolyDP(cnt, 0.02 * peri, True)
@@ -56,17 +56,21 @@ def getContours(img,imgContour):
 
             print(len(approx))
             x , y , w, h = cv2.boundingRect(approx)
-            result = detect_color(x+10,y+10,x+w-20,y+h-20)
+            result = detect_color(x,y,x+w,y+h)
             if(result == 0):
                 red_count +=1
             elif(result == 1):
                 blue_count +=1
+            elif(result == 2):
+                ph_count +=1
             else:
                 other +=1
 
-        prev_area = cv2.contourArea(cnt)
     print(red_count," ",blue_count,"  ",other,"  final output   ")
-    if(red_count > 3):
+    if(red_count >= blue_count and red_count >=1 ):
+        mixer.music.load('ColorFiles(hi)/' + "RED" +'.mp3')
+        mixer.music.play()
+        time.sleep(0.5)
         if(prev_result_mode2 == "red"):
             print("Red again")
             #speak red again
@@ -78,7 +82,10 @@ def getContours(img,imgContour):
                 print("Its Red now")
                 #speak its red now
         prev_result_mode2 = "red"
-    if(blue_count > 3):
+    elif(blue_count > red_count and blue_count >=1 ):
+        mixer.music.load('ColorFiles(hi)/' + "BLUE" +'.mp3')
+        mixer.music.play()
+        time.sleep(0.5)
         if(prev_result_mode2 == "blue"):
             print("Blue again")
             #speak blue again
@@ -90,8 +97,11 @@ def getContours(img,imgContour):
                 print("Its Blue now")
                 #speak its blue now
         prev_result_mode2 = "blue"
+    elif(ph_count>=1):
+        print("no color detected in ph paper")
+        prev_result_mode2 = "nill"
     else:
-        print("No ph paper.....")
+        print("No ph paper detected.....")
         #speak no change
         prev_result_mode2 = "nill"
     
@@ -102,49 +112,76 @@ def getContours(img,imgContour):
 
 def detect_color(s1,s2,e1,e2):
 
-    red = 0
-    blue = 0
-    white = 0
-    ph = 0
-    count = 0
-    for x in range( s1, e1-1,10) :
-        for y in range( s2 , e2-1,10) :
-            count+=1
-            if frameHeight <= x+10 or frameWidth <= y+10:
+    hsv_frame = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+
+     # Red color
+    low_red = np.array([0, 60, 105])
+    high_red = np.array([13, 255, 205])
+    red_mask = cv2.inRange(hsv_frame, low_red, high_red)
+    red = cv2.bitwise_and(img, img, mask=red_mask)
+
+    # Blue color
+    low_blue = np.array([94, 80, 2])
+    high_blue = np.array([126, 255, 255])
+    blue_mask = cv2.inRange(hsv_frame, low_blue, high_blue)
+    blue = cv2.bitwise_and(img, img, mask=blue_mask)
+
+    # Green color
+    low_green = np.array([16, 40, 86])
+    high_green = np.array([35, 180, 205])
+    green_mask = cv2.inRange(hsv_frame, low_green, high_green)
+    green = cv2.bitwise_and(img, img, mask=green_mask)
+
+    Red = 0
+    Blue = 0
+    Black = 0
+    Ph = 0
+
+    for x in range( s1, e1-1,12) :
+        for y in range( s2 , e2-1,12) :
+            if frameHeight <= x+15 or frameWidth <= y+15:
                 break 
-            roi = img[x:x+10, y:y+10]
+            for z in range (0,2):
+                if(z==0):
+                    roi = red[x:x+10, y:y+10]
+                elif(z==1):
+                    roi = blue[x:x+10, y:y+10]
+                else:
+                    roi = green[x:x+10, y:y+10]
 
-            avg1 = np.average(roi, axis=0)
-            avg2 = np.average(avg1, axis=0)
-            avg2_int = avg2.astype(int)
-            avg2_int = avg2_int[::-1]           #reversed for rgb 
-           # avg2_int_tup = tuple(avg2_int)
-            r = avg2_int[0]
-            g = avg2_int[1]
-            b = avg2_int[2]
-           
-            new = getColorName(r,g,b)
-            if(new =='Red'): 
-                red +=1
-            elif(new== 'Blue'):
-                blue +=1
-            elif(new == 'Ph'):
-                ph +=1
-            else:
-                white +=1
+                avg1 = np.average(roi, axis=0)
+                avg2 = np.average(avg1, axis=0)
+                avg2_int = avg2.astype(int)
+                avg2_int = avg2_int[::-1]           #reversed for rgb 
+               # avg2_int_tup = tuple(avg2_int)
+                r = avg2_int[0]
+                g = avg2_int[1]
+                b = avg2_int[2]
+               
+                new = getColorName(r,g,b)
+                if(new =='RED'): 
+                    Red +=1
+                elif(new== 'BLUE'):
+                    Blue +=1
+                elif(new == 'PH'):
+                    Ph +=1
+                else:
+                    Black +=1
 
-    print(red,"   ",blue,"    ",white,"     ",ph,"    ",count," step output ")
+    print(Red,"   ",Blue,"    ",Black,"     ",Ph,"    "," step output ")
 
 
-    if(red > blue and red > 10):
+    if(Red > Blue and Red > 10):
         print("Red detected")
         return 0
-    elif(blue > red and blue> 10 ):
+    elif(Blue > Red and Blue> 10 ):
         print("Blue detected")
         return 1
+    elif(ph_count > 10 ):
+        return 2
     else:   
         print("..*******************....")
-        return 2
+        return 3
 
 
 
@@ -174,9 +211,8 @@ def func_mode1():
 
     new = getColorName(r,g,b)
 
-    mixer.music.load('ColorFiles(en)/' + new +'.mp3')
+    mixer.music.load('ColorFiles(hi)/' + new +'.mp3')
     mixer.music.play()
-    #print(GPIO.input(btn_pin))
     time.sleep(0.5)
 
 
@@ -188,7 +224,7 @@ while True:
     if (GPIO.input(btn_pin) == False):
         time.sleep(0.01)
         if (GPIO.input(btn_pin) == False):
-            time.sleep(0.3)
+            time.sleep(0.15)
             if (GPIO.input(btn_pin) == True):
                 count+=1
                 if(st_time==-1):
