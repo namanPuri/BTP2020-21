@@ -3,7 +3,8 @@ from gtts import gTTS
 
 
 
-arr=["RED",
+"""arr=[
+"RED",
 "YELLOW",
 "GREEN",
 "ORANGE",
@@ -13,11 +14,13 @@ arr=["RED",
 "WHITE",
 "GREY",
 "PH"
-]
+]"""
+arr=["no ph paper detected","mode changed","ph paper color detection mode","color detection mode","ph paper detected"]
+
 i=0
 language = 'hi'
 
-while(i<10):
+while(i<5):
     tts = gTTS(text=arr[i], lang=language, slow=True) 
     name=arr[i] + ".mp3"
     tts.save(name)
