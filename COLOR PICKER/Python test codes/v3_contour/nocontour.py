@@ -71,7 +71,7 @@ def func_mode2():
         time.sleep(0.5)
     elif(Ph > 50 ):
         print("ph paper")
-        mixer.music.load('ColorFiles(hi)/' + "no ph paper detected" +'.mp3')
+        mixer.music.load('ColorFiles(hi)/' + "ph paper detected" +'.mp3')
         mixer.music.play()
         time.sleep(1)
     else:   
