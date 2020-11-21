@@ -108,14 +108,14 @@ while True:
     if (GPIO.input(btn_pin) == False):
         time.sleep(0.01)
         if (GPIO.input(btn_pin) == False):
-            time.sleep(0.15)
+            time.sleep(0.2)
             if (GPIO.input(btn_pin) == True):
                 count+=1
                 if(st_time==-1):
                     st_time = time.time()
 
     if(st_time!=-1):
-        if(time.time()-st_time>1.2 and time.time()-st_time<1.8):
+        if(time.time()-st_time>1 and time.time()-st_time<1.5):
             print(count)
             if(count==1):
                 print(mode)
@@ -127,26 +127,26 @@ while True:
             else:
                 mixer.music.load('ColorFiles(hi)/' + "mode changed" +'.mp3')
                 mixer.music.play()
-                time.sleep(0.8)
+                time.sleep(0.5)
                 mode = not mode
                 if(mode):
                     print("changed mode 1")
 
                     mixer.music.load('ColorFiles(hi)/' + "color detection mode" +'.mp3')
                     mixer.music.play()
-                    time.sleep(1)
+                    time.sleep(0.8)
                     #sound
                 else:
                     print("changed mode 2")
                     mixer.music.load('ColorFiles(hi)/' + "ph paper color detection mode" +'.mp3')
                     mixer.music.play()
-                    time.sleep(1.5)
+                    time.sleep(1)
                     #sound
 
             count=0
             st_time=-1;
 
-        if(time.time()-st_time>1.8):
+        if(time.time()-st_time>1.5):
             count=0
             st_time=-1
 
