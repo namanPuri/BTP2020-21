@@ -53,7 +53,7 @@ DIGITS_LOOKUP = {					#dictionary
 # load the example image
 
 
-image = cv2.imread('..\\Images_to_test\\9.jpeg')
+image = cv2.imread('..\\Images_to_test\\1.jpeg')
 # pre-process the image by resizing it, converting it to
 # graycale, blurring it, and computing an edge map
 
@@ -95,7 +95,7 @@ for c in digitCnts:
 		w = w + 8
 	roi = thresh[y:y + h, x:x + w]
 	cv2.rectangle(output,(x,y),(x+w,y+h),(0,0,255),1)
-	cv2.rectangle(warped,(x,y),(x+w,y+h),(0,0,255),1)
+	cv2.rectangle(warped,(x,y),(x+w,y+h),(255,255,255),1)
 cv2.imshow("edged",output)
 cv2.imshow("thresh",thresh)
 #print(len(digitCnts))
