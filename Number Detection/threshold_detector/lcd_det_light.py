@@ -53,7 +53,7 @@ DIGITS_LOOKUP = {					#dictionary
 # load the example image
 
 
-image = cv2.imread('..\\Images_to_test\\1.jpeg')
+image = cv2.imread('..\\Images_to_test\\2.jpeg')
 # pre-process the image by resizing it, converting it to
 # graycale, blurring it, and computing an edge map
 
