@@ -1,4 +1,4 @@
-#finding hsv range of target object(pen)
+"""#finding hsv range of target object(pen)
 import cv2
 import numpy as np
 import time
@@ -101,8 +101,8 @@ while True:
     hsv_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
      # Red color
-    low_red = np.array([0, 60, 105])
-    high_red = np.array([13, 255, 205])
+    low_red = np.array([0, 50, 100])
+    high_red = np.array([43, 255, 225])
     red_mask = cv2.inRange(hsv_frame, low_red, high_red)
     red = cv2.bitwise_and(frame, frame, mask=red_mask)
 
@@ -129,7 +129,6 @@ while True:
     if key == 27:
         break
 
-"""
 
 """import cv2
 import numpy as np
